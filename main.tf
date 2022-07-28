@@ -1,6 +1,9 @@
-# Create EC2 Instance
 resource "aws_instance" "web" {
-  ami           = "ami-047a51fa27710816e" # Amazon Linux
-  instance_type = "t2.micro"
-  count         = 2
+  ami           = "var.ami_id" # Amazon Linux
+  instance_type = "var.instance_type"
+  count         = "var.instance_count"
+  tags = {
+    "Name" = "web"
+    #"Name" = "web-${count.index}"
+  }
 }
