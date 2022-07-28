@@ -4,6 +4,7 @@ resource "aws_instance" "web" {
   count         = var.instance_count
   tags = {
     "Name" = "web"
+    "Contact" = "vinodkumar"
     #"Name" = "web-${count.index}"
   }
 }
